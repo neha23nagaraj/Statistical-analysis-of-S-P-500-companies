@@ -1,52 +1,71 @@
-# Statistical Analysis of S&P 500 Companies Using Financial Metrics
+# 📈 Statistical Analysis of S&P 500 Companies Using Financial Metrics
 
-This project presents a comprehensive statistical analysis of key financial metrics across companies in the S&P 500 index. The goal is to identify patterns, correlations, sector-based differences, and valuation insights using a combination of exploratory data analysis, statistical testing, regression modeling, and unsupervised learning.
+This project performs a detailed statistical analysis of publicly available financial data for S&P 500 companies. The analysis uses foundational statistical methods to uncover trends, sector-based differences, and predictive patterns in company valuation metrics such as Market Capitalization, Price-to-Earnings (P/E), and Earnings per Share (EPS).
 
-## 📊 Objectives
+The project was conducted as part of the graduate-level course **MA-541: Statistical Methods** at Stevens Institute of Technology.
 
-- Understand distributions and central tendencies of financial ratios like P/E, P/S, and Market Cap.
-- Detect and interpret outliers using box plots and distribution analysis.
-- Assess sector-wise performance and valuation using visualizations and hypothesis testing.
-- Build a multiple linear regression model to predict Market Capitalization.
-- Apply K-Means clustering to group companies based on financial profiles.
+---
 
-## 🧪 Methodology
+## 🎯 Objectives
 
-- **Data Preprocessing**: Handled missing values, standardized numeric features.
-- **EDA**: Generated histograms, box plots, and correlation matrices to visualize financial patterns.
+- Explore and visualize key financial indicators such as Price, Market Cap, P/E Ratio, and Dividend Yield.
+- Detect skewness, outliers, and distribution characteristics using box plots and histograms.
+- Identify whether certain financial metrics vary significantly across sectors.
+- Build a predictive model to estimate a company’s Market Cap based on its financial ratios.
+- Uncover hidden financial groupings among companies using unsupervised learning techniques like clustering.
+
+---
+
+## 🔍 Methodology
+
+- **Exploratory Data Analysis (EDA)**:
+  - Histograms and boxplots for understanding distributions.
+  - Sector-wise visualizations to compare financial ratios.
+  - Correlation matrix to assess linear relationships.
+
 - **Hypothesis Testing**:
-  - Mann-Whitney U-Test to compare P/E ratios across tech and non-tech sectors.
-  - Kruskal-Wallis test for median differences in P/E and Market Cap across sectors.
-  - Chi-square test to check association between Sector and Dividend status.
-  - Pearson correlation test for Market Cap vs. P/E.
-- **Regression Modeling**: Built a multiple linear regression model using selected financial indicators to predict log-transformed Market Cap.
-- **Clustering**: Applied K-Means clustering on scaled financial metrics, visualized with PCA.
+  - *Mann-Whitney U-Test*: Used to assess P/E ratio differences between Tech and Non-Tech sectors.
+  - *Kruskal-Wallis Test*: Analyzed Market Cap and P/E variation across sectors.
+  - *Chi-Square Test*: Evaluated the association between sector type and dividend distribution.
+  - *Pearson Correlation*: Assessed strength of linear relationships, e.g., between EBITDA and Market Cap.
 
-## 📈 Key Results
+- **Model Building**:
+  - Applied multiple linear regression using log-transformed Market Cap as the response variable.
+  - Included features like P/E, Earnings per Share, and Dividend Yield.
+  - Evaluated model accuracy using R² and residual analysis.
 
-- Significant sector-wise differences were identified in valuation metrics.
-- Positive correlation between Market Cap and EBITDA observed.
-- Regression model explained ~47% of the variance in Market Cap (R² = 0.47).
-- K-Means clustering revealed 4 distinct company profiles based on financial behavior.
+- **Clustering**:
+  - Applied K-Means algorithm on scaled numeric data.
+  - PCA used to visualize clusters and interpret cluster characteristics.
 
-## 🛠️ Tools & Libraries
+---
 
-- Python (Pandas, NumPy, Matplotlib, Seaborn, SciPy, Statsmodels, Scikit-learn)
-- Jupyter/Google Colab (Notebook environment)
-- LaTeX (for report formatting)
+## ✅ Key Results
 
-## 📁 Project Structure
+- **Distribution Analysis**: Most financial metrics were right-skewed, indicating the presence of high-value outliers.
+- **Outlier Detection**: Sectors like Technology and Healthcare showed significant valuation dispersion.
+- **Hypothesis Testing**:
+  - P/E ratio and Market Cap varied significantly across sectors.
+  - No significant correlation was found between sector type and dividend payment.
+- **Regression Model**:
+  - Achieved an R² score of ~0.47.
+  - Log transformation of Market Cap improved model interpretability.
+- **K-Means Clustering**:
+  - Optimal number of clusters determined via elbow method.
+  - Identified 4 clusters with distinct financial profiles.
 
-```
-├── data/                     # Cleaned financial dataset
-├── code/
-│   ├── eda_analysis.ipynb    # Main notebook with EDA and statistical testing
-│   ├── regression_model.ipynb
-│   └── clustering.ipynb
-├── figures/                  # Plots and visualizations used in report
-├── report/                   # Final report (PDF + LaTeX)
-└── README.md
-```
+---
 
+## 🧰 Tools & Libraries Used
 
-> *This project was completed as part of MA-541 Statistical Methods course at Stevens Institute of Technology.*
+- **Languages**: Python (Jupyter/Colab)
+- **Libraries**:
+  - Data Handling: `pandas`, `numpy`
+  - Visualization: `matplotlib`, `seaborn`
+  - Statistical Analysis: `scipy`, `statsmodels`
+  - Machine Learning: `scikit-learn`
+- **Documentation & Report**: LaTeX (Overleaf)
+
+---
+
+> *This repository was created for academic purposes as part of the MA-541 Statistical Methods course at Stevens Institute of Technology.*
